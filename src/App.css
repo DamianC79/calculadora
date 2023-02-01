@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top , #cf550e 0%, #e9b570 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  padding-top: 20px;
+  user-select: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.react-calculator {
+  position: relative;
+  margin: 0 auto;
+  width: 320px;
+  height: 490px;
+  background-color: #000000;
+  box-shadow: 0 19px 38px rgba(19, 19, 19, .24),
+    0 15px 12px rgba(19, 19, 19, .12);
+  border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+button {
+  outline: none;
+  border: 0;
+  padding: 16px;
+  font-size: 20px;
+  line-height: 1;
+  background-color: #222746;
+  color: #ffce5c;
+  transition: all 300ms;
+  border: 1px solid #0001;
+  border-radius: 50%;
+}
+
+button:hover {
+  color: #00a3f5;
+  border: 1px solid #ffce5c22;
+}
+
+.result {
+  position: relative;
+  width: 320px;
+  height: 75px;
+  padding: 8px;
+  overflow: hidden;
+  background-color: rgba(63, 63, 63, 0.64);
+  font-size: 32px;
+  line-height: 2;
+  color: #60d63c;
+  text-align: right;
+  direction: rtl;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-radius:10px
+}
+
+.functions button,
+.math-operations button {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  color: #00a3f5
+}
+
+.functions button:hover,
+.math-operations button:hover {
+  color: #88acf0;
+}
+
+.numbers {
+  width: 240px;
+  float: left;
+}
+
+.numbers button {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+.numbers button:last-child {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content:center;
+  align-content: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.functions {
+  float: left;
+  width: 240px;
 }
