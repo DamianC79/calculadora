@@ -17,37 +17,27 @@ function App() {
     <main className="react-calculator">
       
         <Resultado value={value}/>
-        <Numeros onClickNumber={numero => { 
-          console.log(numero) 
-          setUseOperacion(`${useOperacion}${numero}`)
+        <Numeros onClickNumber={numero => {setUseOperacion(`${useOperacion}${numero}`)
         }}/>
-        <div className='operaciones'>
+        
         <Funciones 
-          onContentClear={()=> {
-            setUseOperacion("")
-            console.log("clear")
-          }}
+          onContentClear={()=> {setUseOperacion("")}}
           onDelete={()=>{ 
             if(useOperacion > 0)
             {
               const newUseOperacion = useOperacion.substring(0, useOperacion.length - 1)
-              console.log("delete", useOperacion)
               setUseOperacion(newUseOperacion)
             }
           }}
         />
         <Operaciones 
-          onClickOperation={operation => {
-            setUseOperacion(`${useOperacion}${operation}`)
-            console.log("Operación:", operation)
-          }}
+          onClickOperation={operation => {setUseOperacion(`${useOperacion}${operation}`)}}
           onClickEqual={equal => {
             // eslint-disable-next-line
             setUseOperacion(eval(useOperacion).toString())
-            console.log("Operación:", equal)
           }}
         />
-        </div>
+       
       
     </main>
   );
